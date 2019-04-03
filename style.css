@@ -1,28 +1,86 @@
+.icon {
+  width: 1em; height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
+ol,ul,li{
+  list-style: none;
+}
 #xxx{
     background: #f9f7f7;
     display: block;
   }
   
   body{
-    margin: 0px;
+    /* 禁用滚动条 */
+    overflow: hidden;  
   }
   
   
   
-  .actions{
+.actions{
     position: fixed;
-    bottom: 0;
+    top: 0;
     left: 0;
-  }
-  .actions > #brush{
-    display: none;
-  }
-  
-  .actions.x > #brush{
-    display: inline-block;
-  }
-  .actions.x > #eraser{
-    display: none
-  }
+    padding: 15px;
+}
 
-  
+.actions svg{
+  font-size: 1.8em;
+  transition: all .3s;
+  margin: 0 6px;
+}
+.actions svg.active{
+  fill: red;
+  transform: scale(1.1);
+}
+
+.colors{
+  position: fixed;
+  top: 60px;
+  left: 28px;
+}
+.colors li{
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin: 10px 0;
+}
+
+.colors .red{
+  background: red;
+}
+.colors .green{
+  background: green;
+}
+.colors .blue{
+  background: blue;
+}
+.colors li.active{
+  transform: scale(1.1);
+}
+
+.size{
+  position: fixed;
+  right: 10px;
+  top: 45px;
+}
+.size li{
+  margin: 10px 0;
+}
+.size .thin{
+  height: 0;
+  width: 20px;
+  border-top: 3px solid black;
+}
+
+.size .thick{
+  height: 0;
+  width: 20px;
+  border-top: 6px solid black;
+}
