@@ -12,7 +12,7 @@ ol,ul,li{
   list-style: none;
 }
 #xxx{
-    background: #f9f7f7;
+    /* background: #f9f7f7; */
     display: block;
     position: fixed;
     top: 0;

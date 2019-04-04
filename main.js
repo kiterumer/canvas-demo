@@ -1,10 +1,15 @@
 
 var yyy = document.getElementById('xxx');
 var context = yyy.getContext('2d');
-var lineWidth = 5
 
-// context.fillStyle = "#fff"
-// context.fillRect(0, 0, yyy.width, yyy.height)
+var lineWidth = 5;
+
+
+// 进入画板自动绘制一个白色的背景
+setTimeout(function(){
+  context.fillStyle = "#fff"
+  context.fillRect(0, 0, yyy.width, yyy.height)
+},0.1)
 
 autoSetCanvasSize(yyy)
 
@@ -24,10 +29,12 @@ brush.onclick = function(){
 }
 // 清屏
 clear.onclick = function(){
-  context.clearRect(0, 0, yyy.width, yyy.height);
+  context.fillStyle = "#fff"
+  context.fillRect(0, 0, yyy.width, yyy.height);
 }
 // 保存为图片
 save.onclick = function(){
+
   var url = yyy.toDataURL("image/png")
   var a = document.createElement('a')
   document.body.appendChild(a)
@@ -60,7 +67,7 @@ thick.onclick = function(){
 
 
 /******/
-
+// 画板自适应大小
 function autoSetCanvasSize(canvas) {
   setCanvasSize()
 
@@ -76,14 +83,14 @@ function autoSetCanvasSize(canvas) {
     canvas.height = pageHeight
   }
 }
-
+// 画圆点
 function drawCircle(x, y, radius) {
   context.beginPath()
   // context.fillStyle = 'black'
   context.arc(x, y, radius, 0, Math.PI * 2);
   context.fill()
 }
-
+// 画线
 function drawLine(x1, y1, x2, y2) {
   context.beginPath();
   // context.strokeStyle = 'black'
@@ -95,10 +102,8 @@ function drawLine(x1, y1, x2, y2) {
   context.stroke()
   context.closePath()
 }
-
+// 监听用户操作
 function listenToUser(canvas) {
-
-
   var using = false
   var lastPoint = {
     x: undefined,
