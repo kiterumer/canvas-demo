@@ -43,25 +43,49 @@ save.onclick = function(){
   a.target = '_blank'
   a.click()
 }
+black.onclick = function(){
+  context.fillStyle = '#000'
+  context.strokeStyle = '#000'
 
+  $('#black').addClass('active')
+  $('#black').siblings().removeClass('active')
+}
 red.onclick = function(){
-  context.fillStyle = 'red'
-  context.strokeStyle = 'red'
+  context.fillStyle = '#ff1a40'
+  context.strokeStyle = '#ff1a40'
+
+  $('#red').addClass('active')
+  $('#red').siblings().removeClass('active')
 }
 green.onclick = function(){
-  context.fillStyle = 'green'
-  context.strokeStyle = 'green'
+  context.fillStyle = '#2bd965'
+  context.strokeStyle = '#2bd965'
+
+  $('#green').addClass('active')
+  $('#green').siblings().removeClass('active')
 }
 blue.onclick = function(){
-  context.fillStyle = 'blue'
-  context.strokeStyle = 'blue'
+  context.fillStyle = '#1a8cff'
+  context.strokeStyle = '#1a8cff'
+
+  $('#blue').addClass('active')
+  $('#blue').siblings().removeClass('active')
 }
 
 thin.onclick = function(){
-  lineWidth = 5
+  lineWidth = 6
+  $('#thin').addClass('active')
+  $('#thin').siblings().removeClass('active')
+}
+mid.onclick = function(){
+  lineWidth = 9
+  $('#mid').addClass('active')
+  $('#mid').siblings().removeClass('active')
 }
 thick.onclick = function(){
-  lineWidth = 10
+  lineWidth = 12
+  $('#thick').addClass('active')
+  $('#thick').siblings().removeClass('active')
 }
 
 
@@ -70,12 +94,13 @@ thick.onclick = function(){
 // 画板自适应大小
 function autoSetCanvasSize(canvas) {
   setCanvasSize()
-
+  // 监听页面大小改变
   window.onresize = function() {
     setCanvasSize()
   }
 
   function setCanvasSize() {
+    // 获取页面宽高，并赋值给canvas  ；获取宽高方式不止一种
     var pageWidth = document.documentElement.clientWidth
     var pageHeight = document.documentElement.clientHeight
 
@@ -155,7 +180,7 @@ function listenToUser(canvas) {
       var y = aaa.clientY
       using = true
       if (eraserEnabled) {
-        context.clearRect(x - 5, y - 5, 10, 10)
+        context.clearRect(x - 5, y - 5, 15, 15)
       } else {
         lastPoint = {
           "x": x,
@@ -170,7 +195,7 @@ function listenToUser(canvas) {
       if (!using) {return}
   
       if (eraserEnabled) {
-        context.clearRect(x - 5, y - 5, 10, 10)
+        context.clearRect(x - 5, y - 5, 15, 15)
       } else {
         var newPoint = {
           "x": x,

@@ -45,45 +45,54 @@ ol,ul,li{
 
 .colors{
   position: fixed;
-  top: 60px;
-  left: 28px;
+  top: 100px;
+  left: 25px;
 }
 .colors li{
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  margin: 10px 0;
+  margin: 15px 0;
+  cursor: pointer;
+  transition: all 0.2s;
 }
-
+.colors .black{
+  background: #000;
+}
 .colors .red{
-  background: red;
+  background: #ff1a40;
 }
 .colors .green{
-  background: green;
+  background: #2bd965;
 }
 .colors .blue{
-  background: blue;
+  background: #1a8cff;
 }
-.colors li.active{
-  transform: scale(1.1);
+.colors li.active,
+.size li.active{
+  transform: scale(1.2);
+  box-shadow: 0 0 3px rgba(0,0,0,.6);
 }
 
 .size{
   position: fixed;
-  right: 10px;
-  top: 45px;
+  left:25px;
+  top: 280px;
 }
 .size li{
-  margin: 10px 0;
+  margin: 15px 0;
+  height: 0;
+  width: 30px;
+  cursor: pointer;
+  border-radius: 2px;
 }
 .size .thin{
-  height: 0;
-  width: 20px;
-  border-top: 3px solid black;
-}
-
-.size .thick{
-  height: 0;
-  width: 20px;
   border-top: 6px solid black;
+}
+.size .mid{
+  border-top: 9px solid black;
+}
+.size .thick{
+
+  border-top: 12px solid black;
 }
