@@ -11,13 +11,12 @@
 ol,ul,li{
   list-style: none;
 }
-#xxx{
-    /* background: #f9f7f7; */
+/*#xxx{
     display: block;
     position: fixed;
     top: 0;
     left: 0;
-  }
+  }*/
   
   body{
     /* 禁用滚动条 */
